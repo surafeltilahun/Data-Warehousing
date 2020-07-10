@@ -31,8 +31,7 @@ BEGIN
 --Begin the First Loop (200 iterations)--  
     FOR v_helper_200 IN 1..200
     LOOP 
-    --Begin the second loop and insert 50 tuples on row by row basis from the transaction (DS) and join them 
-    --for the relevant tuples in masterdata--
+    --Begin the second loop and insert 50 tuples on row by row basis--
         FOR v_helper_50 IN v_tuples_from..v_tuples_to
         LOOP
             OPEN c_products (c_record(v_tuples_from).product_id);
