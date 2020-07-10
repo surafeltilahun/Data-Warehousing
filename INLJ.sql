@@ -7,7 +7,6 @@ v_helper_200    NUMBER := 1;
 v_helper_50    NUMBER := 1;
 
 
---Declare transaction for masterdata where the at the join attribute--
 CURSOR  c_products (p_product_id masterdata.product_id%TYPE) IS
 SELECT  m.*
 FROM    masterdata  m
