@@ -22,7 +22,7 @@ TYPE get_type IS TABLE OF c_transaction%ROWTYPE;
 c_record get_type;  
 r_products  c_products%ROWTYPE;
 
---Open the cursor and fetch entire columns from transaction table--
+--Open the cursor and fetch entire rows from transaction table--
 BEGIN
     OPEN c_transaction;
     FETCH c_transaction BULK COLLECT INTO c_record;
