@@ -6,23 +6,23 @@ v_tuples_to   NUMBER := 1;
 v_helper_200    NUMBER := 1;
 v_helper_50    NUMBER := 1;
 
-
+--Declare a cursor for masterdata--
 CURSOR  c_products (p_product_id masterdata.product_id%TYPE) IS
 SELECT  m.*
 FROM    masterdata  m
 WHERE   m.product_id = p_product_id;
 
---Declare a cursor --
+--Declare a cursor for transaction--
 CURSOR  c_transaction IS
 SELECT  t.*
 FROM    transactions t;
 
---Declare a cursor data type --
+--Declare the cursor data type --
 TYPE get_type IS TABLE OF c_transaction%ROWTYPE;
 c_record get_type;  
 r_products  c_products%ROWTYPE;
 
---Open the cursor and fetch entire rows from transaction table--
+--Open the cursor and fetch rows from transaction table--
 BEGIN
     OPEN c_transaction;
     FETCH c_transaction BULK COLLECT INTO c_record;
